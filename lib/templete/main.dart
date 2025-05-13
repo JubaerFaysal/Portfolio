@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web/details_page.dart';
-import 'package:flutter_web/homepage.dart';
+import 'package:flutter_web/templete/details_page.dart';
+import 'package:flutter_web/templete/homepage.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'dart:html' as html;
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web/component/my_lists.dart';
+import 'package:flutter_web/templete/component/my_lists.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Skills extends StatelessWidget {

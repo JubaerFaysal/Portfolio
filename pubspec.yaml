@@ -41,6 +41,9 @@ dependencies:
   flutter_animate: ^4.5.2
   carousel_slider: ^5.0.0
   flutter_speed_dial: ^7.0.0
+  font_awesome_flutter: ^10.1.0
+  string_validator: ^1.1.0
+  
 
 dev_dependencies:
   flutter_test:

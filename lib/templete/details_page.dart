@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web/widgets/contact.dart';
-import 'package:flutter_web/widgets/header.dart';
-import 'package:flutter_web/widgets/home.dart';
-import 'package:flutter_web/widgets/projects.dart';
-import 'package:flutter_web/widgets/skills.dart';
+import 'package:flutter_web/templete/widgets/contact.dart';
+import 'package:flutter_web/templete/widgets/header.dart';
+import 'package:flutter_web/templete/widgets/home.dart';
+import 'package:flutter_web/templete/widgets/projects.dart';
+import 'package:flutter_web/templete/widgets/skills.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class DetailsPage extends StatelessWidget {
