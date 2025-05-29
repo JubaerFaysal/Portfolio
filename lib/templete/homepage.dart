@@ -55,7 +55,7 @@ class IntroSection extends StatelessWidget {
   const IntroSection({super.key});
 
   void openCVInNewTab() {
-    html.window.open('lib/images/Jubaer Resume FINAL.pdf', '_blank');
+    html.window.open('lib/templete/images/Jubaer Resume FINAL.pdf', '_blank');
   }
 
   @override
@@ -81,7 +81,7 @@ class IntroSection extends StatelessWidget {
                 children: [
                   const CircleAvatar(
                     radius: 100,
-                    backgroundImage: AssetImage("lib/images/IMG_5174 copy.png"),
+                    backgroundImage: AssetImage("lib/templete/images/IMG_5174 copy.png"),
                   ),
                   const SizedBox(width: 30),
                   Expanded(child: introTextContent()),
@@ -91,7 +91,7 @@ class IntroSection extends StatelessWidget {
                 children: [
                   const CircleAvatar(
                     radius: 80,
-                    backgroundImage: AssetImage("lib/images/IMG_5174 copy.png"),
+                    backgroundImage: AssetImage("lib/templete/images/IMG_5174 copy.png"),
                   ),
                   const SizedBox(height: 20),
                   introTextContent(),
@@ -291,18 +291,18 @@ class Project extends StatelessWidget {
     {
       'title': 'Tailor Shop',
       'description': 'Built an iOS app for Clothing Store management.',
-      'image': 'lib/images/tailor.png',
+      'image': 'lib/templete/images/tailor.png',
       'Link': 'https://github.com/JubaerFaysal/Clothing-Store'
     },
     {
       'title': 'Personal Portfolio',
       'description': 'Developed a web application using Flutter and Firebase',
-      'image': 'lib/images/1.png',
+      'image': 'lib/templete/images/1.png',
     },
     {
       'title': 'Mudi-Bajar',
       'description': 'Created an e-commerce mobile app using Flutter.',
-      'image': 'lib/images/basket.png',
+      'image': 'lib/templete/images/basket.png',
       'Link': 'https://github.com/JubaerFaysal/Mudi-Bajar'
     },
   ];
@@ -406,17 +406,17 @@ class MyWork extends StatelessWidget {
   MyWork({super.key});
 
   final List<String> imagePaths = [
-    'lib/images/1.png',
-    'lib/images/3.png',
-    'lib/images/4.png',
-    'lib/images/5.png',
-    'lib/images/6.png',
-    'lib/images/7.png',
-    'lib/images/8.png',
-    'lib/images/9.png',
-    'lib/images/10.png',
-    'lib/images/11.png',
-    'lib/images/2.png',
+    'lib/templete/images/1.png',
+    'lib/templete/images/3.png',
+    'lib/templete/images/4.png',
+    'lib/templete/images/5.png',
+    'lib/templete/images/6.png',
+    'lib/templete/images/7.png',
+    'lib/templete/images/8.png',
+    'lib/templete/images/9.png',
+    'lib/templete/images/10.png',
+    'lib/templete/images/11.png',
+    'lib/templete/images/2.png',
   ];
 
   @override

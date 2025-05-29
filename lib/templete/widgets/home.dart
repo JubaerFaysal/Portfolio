@@ -8,136 +8,206 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
+      final isWide = constraints.maxWidth >= 760;
       return Container(
-        margin: const EdgeInsets.symmetric(horizontal: 20),
-        // height: constraints.maxHeight/1.2,
-        constraints: const BoxConstraints(
-          minHeight: 350.0,
+        margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+        decoration: BoxDecoration(
+          gradient: const LinearGradient(
+            colors: [
+              Color(0xFF0F2027),
+              Color(0xFF203A43),
+              Color(0xFF2C5364),
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          borderRadius: BorderRadius.circular(30),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.4),
+              blurRadius: 20,
+              offset: const Offset(0, 8),
+            ),
+          ],
         ),
-
-        child: constraints.maxWidth >= 760
+        padding: const EdgeInsets.all(30),
+        child: isWide
             ? Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const SizedBox(
-                    width: 40,
-                  ),
+                  // Left side text
                   Expanded(
+                    flex: 6,
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("Hi, \nI'm Jubaer Ahmed\nFlutter Developer",
+                        Text("Hi, 👋",
                             style: GoogleFonts.poppins(
-                                color: Colors.white,
-                                fontSize: 34,
-                                fontWeight: FontWeight.bold,
-                                height: 1.5)),
-                        const SizedBox(
-                          height: 15,
-                        ),
+                              fontSize: 20,
+                              color: const Color(0xFF64FFDA),
+                              fontWeight: FontWeight.w500,
+                            )),
+                        const SizedBox(height: 5),
+                        Text("I'm Jubaer Ahmed",
+                            style: GoogleFonts.poppins(
+                              fontSize: 36,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              height: 1.3,
+                            )),
+                        Text("Flutter Developer",
+                            style: GoogleFonts.poppins(
+                              fontSize: 28,
+                              color: Colors.grey[400],
+                              fontWeight: FontWeight.w500,
+                            )),
+                        const SizedBox(height: 20),
                         ElevatedButton(
                           onPressed: () async {
-                            String url = "mailto:jubaerfaysal@gmail.com";
-
-                            final Uri uri = Uri.parse(url);
+                            final Uri uri =
+                                Uri.parse("mailto:jubaerfaysal@gmail.com");
                             if (!await launchUrl(uri,
                                 mode: LaunchMode.externalApplication)) {
-                              throw 'Could not launch $url';
+                              throw 'Could not launch $uri';
                             }
                           },
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.red,
+                            backgroundColor: const Color(0xFF64FFDA),
                             padding: const EdgeInsets.symmetric(
-                                horizontal: 25, vertical: 10),
+                                horizontal: 30, vertical: 14),
                             shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10)),
+                                borderRadius: BorderRadius.circular(12)),
+                            elevation: 8,
                           ),
-                          child: Text("Get in Touch",
-                              style: GoogleFonts.poppins(color: Colors.white)),
+                          child: Text(
+                            "Get in Touch",
+                            style: GoogleFonts.poppins(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
                         ),
-                        const SizedBox(height: 10),
+                        const SizedBox(height: 20),
                         Text(
                             "Software Engineer | Developer | 1.5+ Years Experience",
                             style: GoogleFonts.poppins(
-                                fontSize: 18,
-                                color:
-                                    const Color.fromARGB(255, 215, 215, 215))),
+                                fontSize: 16, color: Colors.grey[300])),
                         const SizedBox(height: 10),
                         Text(
-                          "Building ideas into reality, one line of code at a time. Problem-solver by passion.",
+                          "Building ideas into reality, one line of code at a time.\nProblem-solver by passion.",
                           style: GoogleFonts.poppins(
-                              fontSize: 16,
-                              color: const Color.fromARGB(255, 188, 188, 188)),
+                              fontSize: 15, color: Colors.grey[400]),
                         ),
-                        const SizedBox(height: 10),
                       ],
                     ),
                   ),
-                  const SizedBox(
-                    width: 20,
-                  ),
-                  const CircleAvatar(
-                    radius: 220,
-                    backgroundImage: AssetImage("lib/images/IMG_5174 copy.png"),
-                  ),
-                  const SizedBox(
-                    width: 40,
+
+                  const SizedBox(width: 30),
+
+                  // Right side image
+                  Expanded(
+                    flex: 4,
+                    child: CircleAvatar(
+                      radius: 150,
+                      backgroundColor: Colors.transparent,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                              color: const Color(0xFF64FFDA), width: 3),
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                              color: const Color(0xFF64FFDA).withOpacity(0.3),
+                              blurRadius: 30,
+                              spreadRadius: 4,
+                            )
+                          ],
+                        ),
+                        child: const ClipOval(
+                          child: Image(
+                            image: AssetImage(
+                                "lib/templete/images/IMG_5174 copy.png"),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               )
             : Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   CircleAvatar(
-                    radius: 180,
+                    radius: 120,
                     backgroundColor: Colors.transparent,
-                    child: ClipOval(
-                      child: Image.asset(
-                        "lib/images/IMG_5174 copy.png",
-                        fit: BoxFit.fill,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: const Color(0xFF64FFDA), width: 3),
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                            color: const Color(0xFF64FFDA).withOpacity(0.3),
+                            blurRadius: 20,
+                            spreadRadius: 2,
+                          )
+                        ],
+                      ),
+                      child: const ClipOval(
+                        child: Image(
+                          image: AssetImage(
+                              "lib/templete/images/IMG_5174 copy.png"),
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  Text("Hi, \nI'm Jubaer Ahmed\nFlutter Developer",
+                  const SizedBox(height: 20),
+                  Text("Hi, I'm Jubaer Ahmed",
+                      textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
-                          color: Colors.white,
                           fontSize: 28,
-                          fontWeight: FontWeight.bold,
-                          height: 1.5)),
-                  const SizedBox(
-                    height: 15,
-                  ),
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold)),
+                  const SizedBox(height: 8),
+                  Text("Flutter Developer",
+                      style: GoogleFonts.poppins(
+                          fontSize: 22,
+                          color: Colors.grey[400],
+                          fontWeight: FontWeight.w500)),
+                  const SizedBox(height: 15),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () async {
+                      final Uri uri =
+                          Uri.parse("mailto:jubaerfaysal@gmail.com");
+                      if (!await launchUrl(uri,
+                          mode: LaunchMode.externalApplication)) {
+                        throw 'Could not launch $uri';
+                      }
+                    },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.red,
+                      backgroundColor: const Color(0xFF64FFDA),
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 25, vertical: 10),
+                          horizontal: 24, vertical: 12),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                     ),
                     child: Text("Get in Touch",
-                        style: GoogleFonts.poppins(color: Colors.white)),
+                        style: GoogleFonts.poppins(
+                            color: Colors.black, fontWeight: FontWeight.w600)),
                   ),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 20),
                   Text("Software Engineer | Developer | 1.5+ Years Experience",
+                      textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
-                          fontSize: 18,
-                          color: const Color.fromARGB(255, 215, 215, 215))),
+                          fontSize: 16, color: Colors.grey[300])),
                   const SizedBox(height: 10),
                   Text(
-                    "Building ideas into reality, one line of code at a time. Problem-solver by passion.",
+                    "Building ideas into reality, one line of code at a time.\nProblem-solver by passion.",
+                    textAlign: TextAlign.center,
                     style: GoogleFonts.poppins(
-                        fontSize: 15,
-                        color: const Color.fromARGB(255, 188, 188, 188)),
+                        fontSize: 15, color: Colors.grey[400]),
                   ),
                   const SizedBox(height: 15),
                 ],

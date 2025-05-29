@@ -13,71 +13,80 @@ class Header extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         return Container(
-          height: 50,
-          width: double.maxFinite,
+          height: 60,
+          width: double.infinity,
           margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
           decoration: BoxDecoration(
-              gradient: const LinearGradient(
-                  colors: [Color.fromARGB(255, 65, 65, 252), Color.fromARGB(255, 0, 195, 255)]),
-              borderRadius: BorderRadius.circular(100)),
+            borderRadius: BorderRadius.circular(50),
+            gradient: LinearGradient(
+              colors: [
+                Colors.white.withOpacity(0.05),
+                Colors.white.withOpacity(0.02),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.2),
+                blurRadius: 12,
+                offset: const Offset(0, 4),
+              )
+            ],
+            border: Border.all(color: Colors.white.withOpacity(0.1)),
+          ),
           child: constraints.maxWidth >= 667
               ? Row(
                   children: [
-                    const SizedBox(
-                      width: 8,
-                    ),
+                    const SizedBox(width: 16),
                     TextButton(
                       onPressed: () {
-                        html.window.open(
-                            'lib/images/Jubaer Resume FINAL.pdf', '_blank');
+                        html.window.open('lib/templete/images/Jubaer Resume FINAL.pdf', '_blank');
                       },
-                      child: Text("Download CV",
-                          style: GoogleFonts.poppins(
-                            fontSize: 16,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            decoration: TextDecoration.underline,
-                            decorationColor: Colors.white,
-                            decorationThickness: 2,
-                            height: 1.5,
-                          )),
+                      style: TextButton.styleFrom(
+                        foregroundColor: const Color(0xFF64FFDA),
+                        textStyle: GoogleFonts.poppins(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 16,
+                          decoration: TextDecoration.underline,
+                        ),
+                      ),
+                      child: const Text("Download CV"),
                     ),
                     const Spacer(),
                     for (int i = 0; i < buttons.length; i++)
                       Padding(
                         padding: const EdgeInsets.only(right: 15),
                         child: TextButton(
-                            onPressed: () {
-                              onButtonPressed(i);
-                            },
-                            child: Text(buttons[i],
-                                style: GoogleFonts.poppins(
-                                    fontSize: 16,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w500))),
+                          onPressed: () => onButtonPressed(i),
+                          child: Text(
+                            buttons[i],
+                            style: GoogleFonts.poppins(
+                              fontSize: 15,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
                       )
                   ],
                 )
               : Row(
                   children: [
-                    const SizedBox(
-                      width: 8,
-                    ),
+                    const SizedBox(width: 16),
                     TextButton(
                       onPressed: () {
-                        html.window.open(
-                            'lib/images/Jubaer Resume FINAL.pdf', '_blank');
+                        html.window.open('lib/templete/images/Jubaer Resume FINAL.pdf', '_blank');
                       },
-                      child: Text("Download CV",
-                          style: GoogleFonts.poppins(
-                            fontSize: 16,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            decoration: TextDecoration.underline,
-                            decorationColor: Colors.white,
-                            decorationThickness: 2,
-                            height: 1.5,
-                          )),
+                      style: TextButton.styleFrom(
+                        foregroundColor: const Color(0xFF64FFDA),
+                        textStyle: GoogleFonts.poppins(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 16,
+                          decoration: TextDecoration.underline,
+                        ),
+                      ),
+                      child: const Text("Download CV"),
                     ),
                     const Spacer(),
                     SpeedDial(
@@ -87,45 +96,44 @@ class Header extends StatelessWidget {
                       foregroundColor: Colors.white,
                       elevation: 0,
                       shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(
-                            Radius.circular(100)), // 👈 remove any shape
+                        borderRadius: BorderRadius.all(Radius.circular(50)),
                       ),
                       direction: SpeedDialDirection.down,
                       children: [
                         SpeedDialChild(
-                          child: const Icon(Icons.home),
+                          child: const Icon(Icons.home, color: Color(0xFF64FFDA)),
                           label: 'Home',
-                          onTap: () {
-                            onButtonPressed(0);
-                          },
+                          labelStyle: GoogleFonts.poppins(color: Colors.black),
+                          backgroundColor: const Color(0xFF1E1E2F),
+                          onTap: () => onButtonPressed(0),
                         ),
                         SpeedDialChild(
-                          child: const Icon(Icons.handyman_outlined),
+                          child: const Icon(Icons.handyman_outlined, color: Color(0xFF64FFDA)),
                           label: 'Skills',
-                          onTap: () {
-                            onButtonPressed(2);
-                          },
+                          labelStyle: GoogleFonts.poppins(color: Colors.black),
+                          backgroundColor: const Color(0xFF1E1E2F),
+                          onTap: () => onButtonPressed(2),
                         ),
                         SpeedDialChild(
-                          child: const Icon(Icons.room_service_rounded),
+                          child: const Icon(Icons.room_service_rounded, color: Color(0xFF64FFDA)),
                           label: 'Services',
-                          onTap: () {
-                            onButtonPressed(2);
-                          },
+                          labelStyle: GoogleFonts.poppins(color: Colors.black),
+                          backgroundColor: const Color(0xFF1E1E2F),
+                          onTap: () => onButtonPressed(2),
                         ),
                         SpeedDialChild(
-                          child: const Icon(Icons.apps),
+                          child: const Icon(Icons.apps, color: Color(0xFF64FFDA)),
                           label: 'Projects',
-                          onTap: () {
-                            onButtonPressed(3);
-                          },
+                          labelStyle: GoogleFonts.poppins(color: Colors.black),
+                          backgroundColor: const Color(0xFF1E1E2F),
+                          onTap: () => onButtonPressed(3),
                         ),
                         SpeedDialChild(
-                          child: const Icon(Icons.contact_emergency),
+                          child: const Icon(Icons.contact_emergency, color: Color(0xFF64FFDA)),
                           label: 'Contact',
-                          onTap: () {
-                            onButtonPressed(4);
-                          },
+                          labelStyle: GoogleFonts.poppins(color: Colors.black),
+                          backgroundColor: const Color(0xFF1E1E2F),
+                          onTap: () => onButtonPressed(4),
                         ),
                       ],
                     ),

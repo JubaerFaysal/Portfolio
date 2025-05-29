@@ -30,7 +30,7 @@ class MyPortfolio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     void openCVInNewTab() {
-      html.window.open('lib/images/Jubaer Resume FINAL.pdf', '_blank');
+      html.window.open('lib/templete/images/Jubaer Resume FINAL.pdf', '_blank');
     }
 
     return Scaffold(
@@ -159,7 +159,7 @@ class MyPortfolio extends StatelessWidget {
                           Align(
                               alignment: Alignment.center,
                               child:
-                                  Image.asset("lib/images/IMG_5174 copy.png")),
+                                  Image.asset("lib/templete/images/IMG_5174 copy.png")),
                           const Positioned(
                             top: 20,
                             right: 20,

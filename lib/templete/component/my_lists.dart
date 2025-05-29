@@ -5,47 +5,47 @@ final List<String> buttons = ["Home", "Skills", "Services", "Projects", "Contact
 
    final List<Map<String, String>> services = [
     {
-      "img":"lib/images/apple.png",
+      "img":"lib/templete/images/apple.png",
       "title": "iOS Dev",
       "desc": "Crafting seamless experiences for Apple users."
     },
     {
-      "img":"lib/images/android.png",
+      "img":"lib/templete/images/android.png",
       "title": "Android Dev",
       "desc": "Powering billions with flexible, scalable apps."
     },
     {
-      "img":"lib/images/app-development.png",
+      "img":"lib/templete/images/app-development.png",
       "title": "Web Dev",
       "desc": "Bringing ideas to life across browsers."
     },
     {
-      "img":"lib/images/computer.png",
+      "img":"lib/templete/images/computer.png",
       "title": "Desktop Dev",
       "desc": "Easy Desktop use with unique feature."
     },
   ];
 
   final List<Map<String,String>>skills=[
-   { "img": "lib/images/icons8-flutter-512.png",
+   { "img": "lib/templete/images/icons8-flutter-512.png",
     "desc":"Flutter"
    },
-   { "img": "lib/images/icons8-dart-512.png",
+   { "img": "lib/templete/images/icons8-dart-512.png",
     "desc": "Dart"
    },
-   { "img": "lib/images/c-.png",
+   { "img": "lib/templete/images/c-.png",
     "desc":"C++"
    },
-   { "img": "lib/images/java.png",
+   { "img": "lib/templete/images/java.png",
     "desc":"Java"
    },
-   { "img": "lib/images/database.png",
+   { "img": "lib/templete/images/database.png",
     "desc":"SQL"
    },
-   { "img": "lib/images/icons8-firebase-512.png",
+   { "img": "lib/templete/images/icons8-firebase-512.png",
     "desc":"Firebase"
    },
-   { "img": "lib/images/github.png",
+   { "img": "lib/templete/images/github.png",
     "desc":"GitHub"
    },
   ];
@@ -54,33 +54,33 @@ final List<String> buttons = ["Home", "Skills", "Services", "Projects", "Contact
   {
     'title': 'Tailor Shop',
     'description': 'Built an iOS app for Clothing Store management.',
-    'image': 'lib/images/tailor.png',
+    'image': 'lib/templete/images/tailor.png',
     'Link': 'https://github.com/JubaerFaysal/Clothing-Store'
   },
   {
     'title': 'Personal Portfolio',
     'description': 'Developed a web application using Flutter and Firebase',
-    'image': 'lib/images/1.png',
+    'image': 'lib/templete/images/1.png',
   },
   {
     'title': 'Mudi-Bajar',
     'description': 'Created an e-commerce mobile app using Flutter.',
-    'image': 'lib/images/basket.png',
+    'image': 'lib/templete/images/basket.png',
     'Link': 'https://github.com/JubaerFaysal/Mudi-Bajar'
   },
 ];
 final List<String> imagePaths = [
-  'lib/images/1.png',
-  'lib/images/3.png',
-  'lib/images/4.png',
-  'lib/images/5.png',
-  'lib/images/6.png',
-  'lib/images/7.png',
-  'lib/images/8.png',
-  'lib/images/9.png',
-  'lib/images/10.png',
-  'lib/images/11.png',
-  'lib/images/2.png',
+  'lib/templete/images/1.png',
+  'lib/templete/images/3.png',
+  'lib/templete/images/4.png',
+  'lib/templete/images/5.png',
+  'lib/templete/images/6.png',
+  'lib/templete/images/7.png',
+  'lib/templete/images/8.png',
+  'lib/templete/images/9.png',
+  'lib/templete/images/10.png',
+  'lib/templete/images/11.png',
+  'lib/templete/images/2.png',
 ];
 final List<Map<String, dynamic>> socialLinks = [
   {
